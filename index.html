@@ -1,1 +1,239 @@
-# hbirthdaydad
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HAPPY BIRTHDAY | LEGEND</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #080808;
+    color: #eee;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #292929;
+}
+
+.logo {
+    color: #d4af62;
+    letter-spacing: 5px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.year {
+    color: #777;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: #c49a4320;
+    filter: blur(120px);
+    border-radius: 50%;
+}
+
+.tag {
+    color: #c9a454;
+    font-size: 11px;
+    letter-spacing: 6px;
+    margin-bottom: 28px;
+    position: relative;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(55px, 12vw, 105px);
+    line-height: .95;
+    font-weight: normal;
+    position: relative;
+    animation: reveal 1.5s ease;
+}
+
+h1 span {
+    color: #c9a454;
+    display: block;
+    font-style: italic;
+}
+
+.line {
+    width: 70px;
+    height: 2px;
+    background: #c9a454;
+    margin: 35px 0;
+}
+
+.subtitle {
+    color: #999;
+    font-size: 13px;
+    letter-spacing: 2px;
+    line-height: 2;
+    position: relative;
+}
+
+button {
+    margin-top: 40px;
+    background: transparent;
+    border: 1px solid #c9a454;
+    color: #c9a454;
+    padding: 17px 35px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: .3s;
+    position: relative;
+}
+
+button:hover {
+    background: #c9a454;
+    color: #080808;
+}
+
+#message {
+    display: none;
+    max-width: 520px;
+    margin-top: 35px;
+    position: relative;
+    animation: reveal 1s ease;
+}
+
+#message h2 {
+    font-family: Georgia, serif;
+    color: #c9a454;
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+#message p {
+    color: #b6b6b6;
+    font-size: 14px;
+    line-height: 2;
+}
+
+#message .final {
+    color: #eee;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    font-size: 11px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #222;
+    color: #555;
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">LEGACY.</div>
+    <div class="year">SPECIAL EDITION / 01</div>
+</header>
+
+<section class="hero">
+
+    <div class="tag">A DAY FOR A LEGEND</div>
+
+    <h1>
+        HAPPY<br>
+        <span>BIRTHDAY.</span>
+    </h1>
+
+    <div class="line"></div>
+
+    <p class="subtitle">
+        NOT JUST ANOTHER YEAR.<br>
+        ANOTHER CHAPTER OF GREATNESS.
+    </p>
+
+    <button onclick="revealMessage()" id="btn">
+        OPEN YOUR MESSAGE
+    </button>
+
+    <div id="message">
+        <h2>С днём рождения, папа.</h2>
+
+        <p>
+            Желаю крепкого здоровья, уверенности,
+            успеха во всех делах и финансового благополучия.
+            Пусть рядом будут надёжные люди,
+            а впереди — только новые возможности.
+        </p>
+
+        <p style="margin-top: 15px;">
+            Спасибо за всё, чему ты меня учишь.
+            Я это ценю.
+        </p>
+
+        <p class="final">
+            С УВАЖЕНИЕМ. ТВОЙ СЫН.
+        </p>
+    </div>
+
+</section>
+
+<footer>
+    MADE FOR ONE PERSON. ONE LEGEND.
+</footer>
+
+<script>
+function revealMessage() {
+    document.getElementById("message").style.display = "block";
+    document.getElementById("btn").style.display = "none";
+
+    document.getElementById("message").scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
+</script>
+
+</body>
+</html>
